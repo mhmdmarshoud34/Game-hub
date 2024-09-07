@@ -20,8 +20,13 @@ const GenreList = ({ onSelectGenre, seletecdGenre }: Props) => {
   if (isLoading) return <Spinner />;
   return (
     <List>
-      {data.map((genre) => (
-        <ListItem key={genre.id} paddingY="5px">
+      {data.map((genre) => 
+        // genre.name == 'Indie'?
+        //    <>
+        //    test
+        //   </>
+        //   :
+         <ListItem key={genre.id} paddingY="5px">
           <HStack>
             <Image
               boxSize="32px"
@@ -30,7 +35,7 @@ const GenreList = ({ onSelectGenre, seletecdGenre }: Props) => {
             />
             <Button
               onClick={() => onSelectGenre(genre)}
-              fontSize="lg"
+              fontSize="sm"
               variant="link"
               fontWeight={genre.id === seletecdGenre?.id ? "bold" : 'normal'}
             >
@@ -38,7 +43,7 @@ const GenreList = ({ onSelectGenre, seletecdGenre }: Props) => {
             </Button>
           </HStack>
         </ListItem>
-      ))}
+      )}
     </List>
   );
 };
